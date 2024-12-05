@@ -39,14 +39,14 @@ default_value_enabled = true
 default_value = 0.2
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_hanfe"]
-size = Vector2(1204, 940)
+size = Vector2(1204, 738)
 title = "Glow"
 tint_color_enabled = true
 tint_color = Color(0.878431, 0.552941, 0.0431373, 0.184314)
 attached_nodes = PackedInt32Array(11, 3, 4, 13, 12, 7, 5)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_m2gee"]
-size = Vector2(504, 479)
+size = Vector2(504, 118)
 title = "Base color"
 tint_color_enabled = true
 tint_color = Color(0.301961, 0.301961, 0.301961, 0.419608)
@@ -67,7 +67,7 @@ hint = 1
 default_value_enabled = true
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_gerp3"]
-size = Vector2(624, 674)
+size = Vector2(624, 438)
 title = "Alpha animation"
 attached_nodes = PackedInt32Array(18, 16, 17)
 
@@ -289,7 +289,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-955.195, 280.712)
 nodes/vertex/0/position = Vector2(400, 60)
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_7qlsj")
 nodes/vertex/2/position = Vector2(-500, 460)

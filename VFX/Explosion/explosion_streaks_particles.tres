@@ -1,0 +1,29 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://di7h1m6lm5awn"]
+
+[sub_resource type="Curve" id="Curve_jmf4k"]
+_data = [Vector2(0, 0), 0.0, 2.42144, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_37gwn"]
+curve = SubResource("Curve_jmf4k")
+
+[sub_resource type="Curve" id="Curve_se2tw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.459138), 1.7889, 1.7889, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_sgbqj"]
+curve = SubResource("Curve_se2tw")
+
+[resource]
+particle_flag_align_y = true
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 7.0
+scale_curve = SubResource("CurveTexture_sgbqj")
+alpha_curve = SubResource("CurveTexture_37gwn")
+hue_variation_min = -1.0
+hue_variation_max = 1.0

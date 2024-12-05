@@ -1,0 +1,41 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=9 format=3 uid="uid://c2vcebtjp7w6w"]
+
+[sub_resource type="Curve" id="Curve_8p08n"]
+_data = [Vector2(0.446, 0), 0.0, 0.0, 0, 0, Vector2(0.996, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_s3eff"]
+curve = SubResource("Curve_8p08n")
+
+[sub_resource type="Gradient" id="Gradient_4mt0r"]
+offsets = PackedFloat32Array(0.266949, 0.474576)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_55uqx"]
+gradient = SubResource("Gradient_4mt0r")
+
+[sub_resource type="Curve" id="Curve_rbp2y"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.322, 0.322413), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_v5h16"]
+curve = SubResource("Curve_rbp2y")
+
+[sub_resource type="Curve" id="Curve_1tuln"]
+_data = [Vector2(0, 0.304606), 0.0, 2.64452, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_flbtt"]
+curve = SubResource("Curve_1tuln")
+
+[resource]
+emission_shape = 1
+emission_sphere_radius = 1.0
+radial_velocity_min = 6.49998
+radial_velocity_max = 7.49998
+radial_velocity_curve = SubResource("CurveTexture_v5h16")
+gravity = Vector3(0, 3, 0)
+scale_min = 1.7
+scale_max = 1.8
+scale_curve = SubResource("CurveTexture_flbtt")
+color_ramp = SubResource("GradientTexture1D_55uqx")
+alpha_curve = SubResource("CurveTexture_s3eff")

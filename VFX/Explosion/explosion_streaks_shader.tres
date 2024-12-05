@@ -1,0 +1,202 @@
+[gd_resource type="VisualShader" load_steps=23 format=3 uid="uid://cwepakg3f0j1r"]
+
+[ext_resource type="Texture2D" uid="uid://bfxs7xujgdnbw" path="res://Textures/T_PerlinNoise_Tiled11_inv.png" id="1_bmb6x"]
+[ext_resource type="Texture2D" uid="uid://c4aa5yjfaq0xm" path="res://Textures/T_4_streaks.png" id="2_nydl0"]
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_h7iac"]
+linked_parent_graph_frame = 15
+size = Vector2(795, 118)
+title = "Creates a random number between 0 and 1 that is different for each particle"
+attached_nodes = PackedInt32Array(7)
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_a6ahr"]
+linked_parent_graph_frame = 12
+op_type = 0
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_tm1kl"]
+linked_parent_graph_frame = 15
+size = Vector2(244, 118)
+title = "Only use the x value"
+attached_nodes = PackedInt32Array(11)
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_5vkh7"]
+parameter_name = "StreakColor"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_6vs4o"]
+linked_parent_graph_frame = 20
+texture = ExtResource("1_bmb6x")
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_5msaj"]
+size = Vector2(1964, 558)
+title = "Create a random texture offset of 0, 0.25, 0.5, or 0.75"
+attached_nodes = PackedInt32Array(5, 9, 3, 12, 10, 8)
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_asuq7"]
+size = Vector2(280, 118)
+title = "Use texture as alpha mask"
+attached_nodes = PackedInt32Array(2)
+
+[sub_resource type="VisualShaderNodeSmoothStep" id="VisualShaderNodeSmoothStep_dobth"]
+linked_parent_graph_frame = 20
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_wkssr"]
+expanded_output_ports = [0]
+linked_parent_graph_frame = 20
+input_name = "color"
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_h5ek2"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_6kea2"]
+expanded_output_ports = [0]
+linked_parent_graph_frame = 16
+texture = ExtResource("2_nydl0")
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_ctcma"]
+size = Vector2(744, 358)
+title = "Fade out with texture"
+attached_nodes = PackedInt32Array(18, 14, 17)
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_no6qe"]
+linked_parent_graph_frame = 15
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeMultiplyAdd" id="VisualShaderNodeMultiplyAdd_yfl4f"]
+default_input_values = [0, Vector2(0, 0), 1, Vector2(0.25, 1), 2, Vector2(0, 0)]
+linked_parent_graph_frame = 15
+op_type = 1
+
+[sub_resource type="VisualShaderNodeRandomRange" id="VisualShaderNodeRandomRange_ncdod"]
+linked_parent_graph_frame = 8
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_bb8bk"]
+expanded_output_ports = [0]
+linked_parent_graph_frame = 10
+input_name = "color"
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_kmxfm"]
+linked_parent_graph_frame = 15
+size = Vector2(704, 118)
+title = "Can not be used since the seed would be the same for each particle"
+attached_nodes = PackedInt32Array(6)
+
+[sub_resource type="Curve" id="Curve_u0s7g"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.21975, 0), 0.0, 0.0, 0, 0, Vector2(0.253659, 0.258502), 0.0, 0.0, 0, 0, Vector2(0.488037, 0.257118), 0.0, 0.0, 0, 0, Vector2(0.516265, 0.50092), 0.0, 0.0, 0, 0, Vector2(0.73902, 0.513868), 0.0, 0.0, 0, 0, Vector2(0.749301, 0.754142), 0.0, 0.0, 0, 0]
+point_count = 7
+
+[sub_resource type="CurveTexture" id="CurveTexture_nfrtd"]
+curve = SubResource("Curve_u0s7g")
+
+[sub_resource type="VisualShaderNodeCurveTexture" id="VisualShaderNodeCurveTexture_dutoa"]
+linked_parent_graph_frame = 15
+size = Vector2(328, 0)
+texture = SubResource("CurveTexture_nfrtd")
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_lambert, specular_schlick_ggx, unshaded;
+
+uniform vec4 StreakColor : source_color;
+uniform sampler2D curve_frg_9 : repeat_disable;
+uniform sampler2D tex_frg_2;
+uniform sampler2D tex_frg_14;
+
+
+
+void fragment() {
+// ColorParameter:13
+	vec4 n_out13p0 = StreakColor;
+
+
+// Input:3
+	vec2 n_out3p0 = UV;
+
+
+// Input:7
+	vec4 n_out7p0 = COLOR;
+	float n_out7p1 = n_out7p0.r;
+
+
+// CurveTexture:9
+	float n_out9p0 = texture(curve_frg_9, vec2(n_out7p1)).r;
+
+
+// VectorCompose:11
+	float n_in11p1 = 0.00000;
+	vec2 n_out11p0 = vec2(n_out9p0, n_in11p1);
+
+
+// MultiplyAdd:5
+	vec2 n_in5p1 = vec2(0.25000, 1.00000);
+	vec2 n_out5p0 = fma(n_out3p0, n_in5p1, n_out11p0);
+
+
+// Texture2D:2
+	vec4 n_out2p0 = texture(tex_frg_2, n_out5p0);
+
+
+// Input:18
+	vec4 n_out18p0 = COLOR;
+	float n_out18p4 = n_out18p0.a;
+
+
+// Texture2D:14
+	vec4 n_out14p0 = texture(tex_frg_14, UV);
+
+
+// SmoothStep:17
+	float n_in17p1 = 1.00000;
+	float n_out17p0 = smoothstep(n_out18p4, n_in17p1, n_out14p0.x);
+
+
+// FloatOp:19
+	float n_out19p0 = n_out2p0.x * n_out17p0;
+
+
+// Output:0
+	ALBEDO = vec3(n_out13p0.xyz);
+	ALPHA = n_out19p0;
+
+
+}
+"
+modes/cull = 2
+flags/unshaded = true
+nodes/fragment/0/position = Vector2(680, 80)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_6kea2")
+nodes/fragment/2/position = Vector2(-60, 220)
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_no6qe")
+nodes/fragment/3/position = Vector2(-760, 80)
+nodes/fragment/5/node = SubResource("VisualShaderNodeMultiplyAdd_yfl4f")
+nodes/fragment/5/position = Vector2(-420, 140)
+nodes/fragment/6/node = SubResource("VisualShaderNodeRandomRange_ncdod")
+nodes/fragment/6/position = Vector2(-2100, 480)
+nodes/fragment/7/node = SubResource("VisualShaderNodeInput_bb8bk")
+nodes/fragment/7/position = Vector2(-2100, 180)
+nodes/fragment/8/node = SubResource("VisualShaderNodeFrame_kmxfm")
+nodes/fragment/8/position = Vector2(-2140, 440)
+nodes/fragment/9/node = SubResource("VisualShaderNodeCurveTexture_dutoa")
+nodes/fragment/9/position = Vector2(-1240, 200)
+nodes/fragment/10/node = SubResource("VisualShaderNodeFrame_h7iac")
+nodes/fragment/10/position = Vector2(-2140, 140)
+nodes/fragment/11/node = SubResource("VisualShaderNodeVectorCompose_a6ahr")
+nodes/fragment/11/position = Vector2(-760, 260)
+nodes/fragment/12/node = SubResource("VisualShaderNodeFrame_tm1kl")
+nodes/fragment/12/position = Vector2(-800, 220)
+nodes/fragment/13/node = SubResource("VisualShaderNodeColorParameter_5vkh7")
+nodes/fragment/13/position = Vector2(-80, -60)
+nodes/fragment/14/node = SubResource("VisualShaderNodeTexture_6vs4o")
+nodes/fragment/14/position = Vector2(-540, 1060)
+nodes/fragment/15/node = SubResource("VisualShaderNodeFrame_5msaj")
+nodes/fragment/15/position = Vector2(-2180, 40)
+nodes/fragment/16/node = SubResource("VisualShaderNodeFrame_asuq7")
+nodes/fragment/16/position = Vector2(-100, 180)
+nodes/fragment/17/node = SubResource("VisualShaderNodeSmoothStep_dobth")
+nodes/fragment/17/position = Vector2(-40, 920)
+nodes/fragment/18/node = SubResource("VisualShaderNodeInput_wkssr")
+nodes/fragment/18/position = Vector2(-540, 820)
+nodes/fragment/19/node = SubResource("VisualShaderNodeFloatOp_h5ek2")
+nodes/fragment/19/position = Vector2(320, 580)
+nodes/fragment/20/node = SubResource("VisualShaderNodeFrame_ctcma")
+nodes/fragment/20/position = Vector2(-580, 780)
+nodes/fragment/connections = PackedInt32Array(3, 0, 5, 0, 5, 0, 2, 0, 7, 1, 9, 0, 9, 0, 11, 0, 11, 0, 5, 2, 13, 0, 0, 0, 14, 0, 17, 2, 17, 0, 19, 1, 2, 0, 19, 0, 19, 0, 0, 1, 18, 4, 17, 0)
