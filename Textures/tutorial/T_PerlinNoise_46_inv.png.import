@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wem74p6t5alc"
-path.s3tc="res://.godot/imported/T_cloudy_noise_211c.png-7da95cbaeabc1328801fd943494c7453.s3tc.ctex"
+uid="uid://hequfklomokm"
+path.s3tc="res://.godot/imported/T_PerlinNoise_46_inv.png-4992f6a9f6537aaabd91f1c6d2550d53.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/T_cloudy_noise_211c.png"
-dest_files=["res://.godot/imported/T_cloudy_noise_211c.png-7da95cbaeabc1328801fd943494c7453.s3tc.ctex"]
+source_file="res://Textures/tutorial/T_PerlinNoise_46_inv.png"
+dest_files=["res://.godot/imported/T_PerlinNoise_46_inv.png-4992f6a9f6537aaabd91f1c6d2550d53.s3tc.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_resource type="VisualShader" load_steps=23 format=3 uid="uid://cwepakg3f0j1r"]
 
-[ext_resource type="Texture2D" uid="uid://bfxs7xujgdnbw" path="res://Textures/T_PerlinNoise_Tiled11_inv.png" id="1_bmb6x"]
-[ext_resource type="Texture2D" uid="uid://c4aa5yjfaq0xm" path="res://Textures/T_4_streaks.png" id="2_nydl0"]
+[ext_resource type="Texture2D" uid="uid://bfxs7xujgdnbw" path="res://Textures/tutorial/T_PerlinNoise_Tiled11_inv.png" id="1_bmb6x"]
+[ext_resource type="Texture2D" uid="uid://c4aa5yjfaq0xm" path="res://Textures/tutorial/T_4_streaks.png" id="2_nydl0"]
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_h7iac"]
 linked_parent_graph_frame = 15

@@ -1,8 +1,8 @@
 [gd_resource type="VisualShader" load_steps=39 format=3 uid="uid://dyhy4a7wmkpd"]
 
-[ext_resource type="Texture2D" uid="uid://wem74p6t5alc" path="res://Textures/T_cloudy_noise_211c.png" id="1_0tdjt"]
-[ext_resource type="Texture2D" uid="uid://bwjxyijxfodxr" path="res://Textures/T_VFX_Noise_44xainv.png" id="2_rx2hy"]
-[ext_resource type="Texture2D" uid="uid://hequfklomokm" path="res://Textures/T_PerlinNoise_46_inv.png" id="3_qlbbn"]
+[ext_resource type="Texture2D" uid="uid://wem74p6t5alc" path="res://Textures/tutorial/T_cloudy_noise_211c.png" id="1_0tdjt"]
+[ext_resource type="Texture2D" uid="uid://bwjxyijxfodxr" path="res://Textures/tutorial/T_VFX_Noise_44xainv.png" id="2_rx2hy"]
+[ext_resource type="Texture2D" uid="uid://hequfklomokm" path="res://Textures/tutorial/T_PerlinNoise_46_inv.png" id="3_qlbbn"]
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_0dwny"]
 linked_parent_graph_frame = 15

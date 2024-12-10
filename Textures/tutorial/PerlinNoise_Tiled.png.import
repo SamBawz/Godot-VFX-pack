@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwjxyijxfodxr"
-path.s3tc="res://.godot/imported/T_VFX_Noise_44xainv.png-641b5c44ce7721095c96e0df9715e9b3.s3tc.ctex"
+uid="uid://bb1pw3fgw5xpr"
+path.s3tc="res://.godot/imported/PerlinNoise_Tiled.png-c77a801b371dc0ae08c46db4653c88cf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/T_VFX_Noise_44xainv.png"
-dest_files=["res://.godot/imported/T_VFX_Noise_44xainv.png-641b5c44ce7721095c96e0df9715e9b3.s3tc.ctex"]
+source_file="res://Textures/tutorial/PerlinNoise_Tiled.png"
+dest_files=["res://.godot/imported/PerlinNoise_Tiled.png-c77a801b371dc0ae08c46db4653c88cf.s3tc.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://72anob1h3wx6"
-path.s3tc="res://.godot/imported/T_vfx_hit122.jpg-ad89660efe1c22063e41518c0e4caeff.s3tc.ctex"
+uid="uid://uc08l616mxtl"
+path.s3tc="res://.godot/imported/hex-grid-v1.png-a13fe9ca643679f252112d8253de1cac.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/T_vfx_hit122.jpg"
-dest_files=["res://.godot/imported/T_vfx_hit122.jpg-ad89660efe1c22063e41518c0e4caeff.s3tc.ctex"]
+source_file="res://Textures/hex-grid-v1.png"
+dest_files=["res://.godot/imported/hex-grid-v1.png-a13fe9ca643679f252112d8253de1cac.s3tc.ctex"]
 
 [params]
 
