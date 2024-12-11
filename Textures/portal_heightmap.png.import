@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8wolfq4b10iq"
-path.s3tc="res://.godot/imported/circle_05.png-685b262216f48f126af67556728a8cba.s3tc.ctex"
+uid="uid://dn7lgk6d7wydk"
+path.s3tc="res://.godot/imported/portal_heightmap.png-a33084d6d57320df9b6382cccfa63375.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/kenney_particle-pack/PNG (Black background)/circle_05.png"
-dest_files=["res://.godot/imported/circle_05.png-685b262216f48f126af67556728a8cba.s3tc.ctex"]
+source_file="res://Textures/portal_heightmap.png"
+dest_files=["res://.godot/imported/portal_heightmap.png-a33084d6d57320df9b6382cccfa63375.s3tc.ctex"]
 
 [params]
 
