@@ -14,6 +14,8 @@ When you start this project will be able to find a folder called 'VFX'. This con
 # Preview
 [Itch.io](https://arcticblade.itch.io/awesome-godot-vfx-pack?secret=PAtk3JoJDem5pBIUor4hcqIH9E)
 
+If the videos are not visible, visit my repository [here](https://github.com/SamBawz/Godot-VFX-pack)
+
 https://github.com/user-attachments/assets/f2a377df-cc13-4322-999b-f478948a4d4f
 
 https://github.com/user-attachments/assets/28fa8800-bf48-436c-9784-61d6f2f9d4e0
