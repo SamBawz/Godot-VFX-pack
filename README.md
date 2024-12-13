@@ -1,5 +1,11 @@
 # Godot VFX pack
 *Image*
+#Research
+
+[Preliminary literature study v0.pdf](https://github.com/user-attachments/files/18124945/Preliminary.literature.study.v0.pdf)
+
+[Workshop research v0.pdf](https://github.com/user-attachments/files/18124943/Workshop.research.v0.pdf)
+
 # How to use this pack
 When you start this project will be able to find a folder called 'VFX'. This contains all files you'll need for each effect in the pack. It also contains a README file if there are specific instructions required in order to use that specific effect. 
 # Preview
@@ -14,9 +20,4 @@ https://github.com/user-attachments/assets/bd9f8ed1-460e-4064-a157-3485d2fb4852
 https://github.com/user-attachments/assets/860d40eb-dcb4-4909-826a-97802e7bd7a8
 
 https://github.com/user-attachments/assets/ab924101-25e0-4346-b231-850acd6cdf37
-
-#Research
-
-[Preliminary literature study v0.pdf](https://github.com/user-attachments/files/18124945/Preliminary.literature.study.v0.pdf)
-[Workshop research v0.pdf](https://github.com/user-attachments/files/18124943/Workshop.research.v0.pdf)
 
