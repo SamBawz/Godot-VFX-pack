@@ -1,5 +1,6 @@
 # Godot VFX pack
-*Image*
+
+![Banner](https://github.com/user-attachments/assets/19203f31-1c7c-4b0d-8073-855e6cc7a1d3)
 
 # Research
 *Note: research is unfinished*
