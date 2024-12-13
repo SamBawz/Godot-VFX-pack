@@ -1,6 +1,8 @@
 # Godot VFX pack
 *Image*
-#Research
+
+# Research
+*Note: research is unfinished*
 
 [Preliminary literature study v0.pdf](https://github.com/user-attachments/files/18124945/Preliminary.literature.study.v0.pdf)
 
