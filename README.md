@@ -11,6 +11,7 @@
 
 # How to use this pack
 When you start this project will be able to find a folder called 'VFX'. This contains all files you'll need for each effect in the pack. It also contains a README file if there are specific instructions required in order to use that specific effect. 
+
 Note that the Compatibility render method was used in development of these effects, so certain lighting settings might look different depending on whether you use Mobile or Forward+ rendering. There are parameters to change settings in this case. 
 
 # Preview
