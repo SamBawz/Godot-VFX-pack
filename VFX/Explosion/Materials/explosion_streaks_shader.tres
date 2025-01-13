@@ -1,7 +1,7 @@
 [gd_resource type="VisualShader" load_steps=23 format=3 uid="uid://cwepakg3f0j1r"]
 
-[ext_resource type="Texture2D" uid="uid://bfxs7xujgdnbw" path="res://Textures/tutorial/T_PerlinNoise_Tiled11_inv.png" id="1_bmb6x"]
-[ext_resource type="Texture2D" uid="uid://c4aa5yjfaq0xm" path="res://Textures/tutorial/T_4_streaks.png" id="2_nydl0"]
+[ext_resource type="Texture2D" uid="uid://dcnhmkyd6taut" path="res://VFX/Explosion/Textures/T_PerlinNoise_Tiled11_inv.png" id="1_vab52"]
+[ext_resource type="Texture2D" uid="uid://bn8gma8y1rx35" path="res://VFX/Explosion/Textures/T_4_streaks.png" id="2_nmyw2"]
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_h7iac"]
 linked_parent_graph_frame = 15
@@ -24,7 +24,7 @@ parameter_name = "StreakColor"
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_6vs4o"]
 linked_parent_graph_frame = 20
-texture = ExtResource("1_bmb6x")
+texture = ExtResource("1_vab52")
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_5msaj"]
 size = Vector2(1964, 558)
@@ -50,7 +50,7 @@ operator = 2
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_6kea2"]
 expanded_output_ports = [0]
 linked_parent_graph_frame = 16
-texture = ExtResource("2_nydl0")
+texture = ExtResource("2_nmyw2")
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_ctcma"]
 size = Vector2(744, 358)
@@ -128,7 +128,7 @@ void fragment() {
 
 // MultiplyAdd:5
 	vec2 n_in5p1 = vec2(0.25000, 1.00000);
-	vec2 n_out5p0 = fma(n_out3p0, n_in5p1, n_out11p0);
+	vec2 n_out5p0 = (n_out3p0 * n_in5p1) + n_out11p0;
 
 
 // Texture2D:2

@@ -1,12 +1,12 @@
 [gd_resource type="VisualShader" load_steps=39 format=3 uid="uid://dyhy4a7wmkpd"]
 
-[ext_resource type="Texture2D" uid="uid://wem74p6t5alc" path="res://Textures/tutorial/T_cloudy_noise_211c.png" id="1_0tdjt"]
-[ext_resource type="Texture2D" uid="uid://bwjxyijxfodxr" path="res://Textures/tutorial/T_VFX_Noise_44xainv.png" id="2_rx2hy"]
-[ext_resource type="Texture2D" uid="uid://hequfklomokm" path="res://Textures/tutorial/T_PerlinNoise_46_inv.png" id="3_qlbbn"]
+[ext_resource type="Texture2D" uid="uid://cql1a8k8thew6" path="res://VFX/Explosion/Textures/T_cloudy_noise_211c.png" id="1_i7wqd"]
+[ext_resource type="Texture2D" uid="uid://bsqfpxndwj8c8" path="res://VFX/Explosion/Textures/T_VFX_Noise_44xainv.png" id="2_naln7"]
+[ext_resource type="Texture2D" uid="uid://d1iqhqrwq5j3k" path="res://VFX/Explosion/Textures/T_PerlinNoise_46_inv.png" id="3_vdati"]
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_0dwny"]
 linked_parent_graph_frame = 15
-texture = ExtResource("1_0tdjt")
+texture = ExtResource("1_i7wqd")
 texture_type = 1
 
 [sub_resource type="VisualShaderNodeSmoothStep" id="VisualShaderNodeSmoothStep_7csdm"]
@@ -47,7 +47,7 @@ attached_nodes = PackedInt32Array(9, 10)
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_q3uh7"]
 linked_parent_graph_frame = 19
-texture = ExtResource("2_rx2hy")
+texture = ExtResource("2_naln7")
 texture_type = 1
 
 [sub_resource type="VisualShaderNodeSmoothStep" id="VisualShaderNodeSmoothStep_irsy7"]
@@ -136,7 +136,7 @@ default_value = Vector2(0, 0.8)
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_yblkd"]
 expanded_output_ports = [0]
-texture = ExtResource("3_qlbbn")
+texture = ExtResource("3_vdati")
 texture_type = 1
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_7qlsj"]
@@ -260,7 +260,7 @@ void fragment() {
 	float n_in23p0 = 1.00000;
 	{
 		float __depth_tex = texture(depth_tex_frg_23, SCREEN_UV).r;
-		vec4 __depth_world_pos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, __depth_tex, 1.0);
+		vec4 __depth_world_pos = INV_PROJECTION_MATRIX * vec4(vec3(SCREEN_UV, __depth_tex) * 2.0 - 1.0, 1.0);
 		__depth_world_pos.xyz /= __depth_world_pos.w;
 		n_out23p0 = clamp(1.0 - smoothstep(__depth_world_pos.z + n_in23p0, __depth_world_pos.z, VERTEX.z), 0.0, 1.0);
 	}

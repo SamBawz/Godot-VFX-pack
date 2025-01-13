@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vrthqt4jb2pa"
-path.s3tc="res://.godot/imported/hex-grid-v2.png-addd51baafd3547eb8e04d7db6b99824.s3tc.ctex"
+uid="uid://dcnhmkyd6taut"
+path.s3tc="res://.godot/imported/T_PerlinNoise_Tiled11_inv.png-c7447624eea9ae319a1e888b867edbcc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/hex-grid-v2.png"
-dest_files=["res://.godot/imported/hex-grid-v2.png-addd51baafd3547eb8e04d7db6b99824.s3tc.ctex"]
+source_file="res://VFX/Explosion/Textures/T_PerlinNoise_Tiled11_inv.png"
+dest_files=["res://.godot/imported/T_PerlinNoise_Tiled11_inv.png-c7447624eea9ae319a1e888b867edbcc.s3tc.ctex"]
 
 [params]
 

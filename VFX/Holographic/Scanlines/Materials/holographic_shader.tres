@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" load_steps=28 format=3 uid="uid://dd7ik0vidqikk"]
 
-[ext_resource type="Texture2D" uid="uid://iv1a5e82mc43" path="res://Textures/tutorial/scanline.png" id="1_71c0y"]
+[ext_resource type="Texture2D" uid="uid://iv1a5e82mc43" path="res://VFX/Holographic/Scanlines/Textures/scanline.png" id="1_yvpky"]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_k7lj2"]
 input_name = "time"
@@ -30,7 +30,7 @@ default_value_enabled = true
 default_value = Color(1, 0.575, 0, 1)
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_4ne6t"]
-texture = ExtResource("1_71c0y")
+texture = ExtResource("1_yvpky")
 texture_type = 1
 
 [sub_resource type="VisualShaderNodeFresnel" id="VisualShaderNodeFresnel_t3pi0"]

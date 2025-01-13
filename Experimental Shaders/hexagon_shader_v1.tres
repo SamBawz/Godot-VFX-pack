@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" load_steps=20 format=3 uid="uid://1340jjli31xc"]
 
-[ext_resource type="Texture2D" uid="uid://vrthqt4jb2pa" path="res://Textures/hex-grid-v2.png" id="1_oar0h"]
+[ext_resource type="Texture2D" uid="uid://vrthqt4jb2pa" path="res://VFX/Holographic/Hexagons/Textures/hex-grid-v2.png" id="1_oar0h"]
 [ext_resource type="Texture2D" uid="uid://uc08l616mxtl" path="res://Textures/hex-grid-v1.png" id="2_vr74l"]
 [ext_resource type="Texture2D" uid="uid://lm7612sivvpf" path="res://Textures/hex-grid.png" id="3_svfog"]
 
@@ -34,6 +34,11 @@ parameter_name = "ColorParameter"
 texture = ExtResource("3_svfog")
 texture_type = 1
 
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_3c7xt"]
+parameter_name = "ColorParameter2"
+default_value_enabled = true
+default_value = Color(0.965828, 0.689488, 0.397003, 1)
+
 [sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_ctren"]
 default_input_values = [1, Vector2(15, 15), 2, Vector2(0, 0)]
 function = 1
@@ -56,9 +61,6 @@ input_name = "time"
 default_input_values = [0, 0.07, 1, 0.3]
 operator = 2
 
-[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_b24ly"]
-constant = Color(0.138298, 0.125851, 0.00417539, 1)
-
 [resource]
 code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx, world_vertex_coords;
@@ -68,6 +70,7 @@ render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_s
 varying vec3 var_WorldPos;
 
 uniform vec4 ColorParameter : source_color;
+uniform vec4 ColorParameter2 : source_color = vec4(0.965828, 0.689488, 0.397003, 1.000000);
 uniform sampler2D tex_frg_15;
 
 
@@ -81,8 +84,8 @@ void fragment() {
 	vec4 n_out19p0 = ColorParameter;
 
 
-// ColorConstant:9
-	vec4 n_out9p0 = vec4(0.138298, 0.125851, 0.004175, 1.000000);
+// ColorParameter:20
+	vec4 n_out20p0 = ColorParameter2;
 
 
 // Input:7
@@ -110,7 +113,7 @@ void fragment() {
 
 
 // VectorOp:10
-	vec4 n_out10p0 = n_out9p0 * n_out15p0;
+	vec4 n_out10p0 = n_out20p0 * n_out15p0;
 
 
 // Output:0
@@ -136,8 +139,6 @@ nodes/fragment/7/node = SubResource("VisualShaderNodeInput_y6pyf")
 nodes/fragment/7/position = Vector2(-1780, 200)
 nodes/fragment/8/node = SubResource("VisualShaderNodeFloatOp_atorn")
 nodes/fragment/8/position = Vector2(-1420, 260)
-nodes/fragment/9/node = SubResource("VisualShaderNodeColorConstant_b24ly")
-nodes/fragment/9/position = Vector2(-220, 880)
 nodes/fragment/10/node = SubResource("VisualShaderNodeVectorOp_8spog")
 nodes/fragment/10/position = Vector2(40, 380)
 nodes/fragment/11/node = SubResource("VisualShaderNodeTexture_i752h")
@@ -154,4 +155,6 @@ nodes/fragment/18/node = SubResource("VisualShaderNodeFloatOp_kr2cu")
 nodes/fragment/18/position = Vector2(-440, -420)
 nodes/fragment/19/node = SubResource("VisualShaderNodeColorParameter_qh74p")
 nodes/fragment/19/position = Vector2(20, -220)
-nodes/fragment/connections = PackedInt32Array(4, 0, 3, 0, 8, 0, 4, 2, 3, 0, 11, 0, 2, 0, 12, 2, 17, 0, 18, 0, 18, 0, 5, 0, 11, 0, 5, 2, 7, 0, 8, 1, 19, 0, 0, 0, 15, 0, 10, 1, 10, 0, 0, 5, 3, 0, 15, 0, 9, 0, 10, 0)
+nodes/fragment/20/node = SubResource("VisualShaderNodeColorParameter_3c7xt")
+nodes/fragment/20/position = Vector2(-220, 1020)
+nodes/fragment/connections = PackedInt32Array(4, 0, 3, 0, 8, 0, 4, 2, 3, 0, 11, 0, 2, 0, 12, 2, 17, 0, 18, 0, 18, 0, 5, 0, 11, 0, 5, 2, 7, 0, 8, 1, 19, 0, 0, 0, 15, 0, 10, 1, 10, 0, 0, 5, 3, 0, 15, 0, 20, 0, 10, 0)

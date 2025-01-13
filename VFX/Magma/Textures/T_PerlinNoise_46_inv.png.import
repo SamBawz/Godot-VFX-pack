@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iv1a5e82mc43"
-path.s3tc="res://.godot/imported/scanline.png-0a759f3ac4c9c752ccc595ac7a7ef354.s3tc.ctex"
+uid="uid://crxppj45qx88m"
+path.s3tc="res://.godot/imported/T_PerlinNoise_46_inv.png-ffcc83c62636f7750490e1c75d764ecf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/tutorial/scanline.png"
-dest_files=["res://.godot/imported/scanline.png-0a759f3ac4c9c752ccc595ac7a7ef354.s3tc.ctex"]
+source_file="res://VFX/Magma/Textures/T_PerlinNoise_46_inv.png"
+dest_files=["res://.godot/imported/T_PerlinNoise_46_inv.png-ffcc83c62636f7750490e1c75d764ecf.s3tc.ctex"]
 
 [params]
 
