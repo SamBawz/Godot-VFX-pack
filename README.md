@@ -3,11 +3,13 @@
 ![Banner](https://github.com/user-attachments/assets/19203f31-1c7c-4b0d-8073-855e6cc7a1d3)
 
 # Research
-*Note: research is unfinished*
 
-[Preliminary literature study v0.pdf](https://github.com/user-attachments/files/18124945/Preliminary.literature.study.v0.pdf)
+[Project plan deep dive.pdf](https://github.com/user-attachments/files/18398263/Project.plan.deep.dive.Sam.Bos.-.V2.pdf)
 
-[Workshop research v0.pdf](https://github.com/user-attachments/files/18124943/Workshop.research.v0.pdf)
+[Preliminary literature study.pdf](https://github.com/user-attachments/files/18398259/Preliminary.literature.study.v2.pdf)
+
+[Workshop findings.pdf](https://github.com/user-attachments/files/18398261/Workshop.findings.v2.pdf)
+
 
 # How to use this pack
 When you start this project will be able to find a folder called 'VFX'. This contains all files you'll need for each effect in the pack. It also contains a README file if there are specific instructions required in order to use that specific effect. 
